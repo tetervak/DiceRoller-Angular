@@ -1,10 +1,14 @@
-a{
+main {
+  margin-left: 1em;
+}
+
+a {
   color: #0288D1;
   font-weight: bolder;
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   text-decoration: underline;
 }
 
@@ -12,13 +16,13 @@ h2 {
   color: #00bcd4;
 }
 
-.total_label{
+.total_label {
   color: #673ab7;
   font-size: larger;
   font-weight: bolder;
 }
 
-.total_number{
+.total_number {
   font-size: larger;
   font-weight: bolder;
   color: #ff9800;
