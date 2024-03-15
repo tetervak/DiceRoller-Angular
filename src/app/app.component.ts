@@ -10,13 +10,12 @@ import {RollData} from "./roll-data";
 export class AppComponent {
 
   // the result values
-  rollData: RollData;
+  rollData: RollData | undefined;
 
   // the input value
   numberOfDice: number = 3;
 
   constructor(private rollerService: RollerService) {
-    this.rollData = rollerService.getRollData(this.numberOfDice);
   }
 
   onRollDice(): void {

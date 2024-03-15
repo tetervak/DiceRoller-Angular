@@ -1,11 +1,13 @@
 <app-header></app-header>
 <main>
   <h2>Roll the Dice</h2>
-  <app-dice-display [diceValues]="rollData.values"></app-dice-display>
-  <p>
-    <span class="total_label">Total:</span>&nbsp;
-    <span class="total_number">{{rollData.total}}</span>
-  </p>
+  <ng-container *ngIf="rollData !== undefined">
+    <app-dice-display [diceValues]="rollData.values"></app-dice-display>
+    <p>
+      <span class="total_label">Total:</span>&nbsp;
+      <span class="total_number">{{rollData.total}}</span>
+    </p>
+  </ng-container>
   <p>
     <label for="c">Number of Dice:</label>&nbsp;
     <select id="c" [(ngModel)]="numberOfDice">

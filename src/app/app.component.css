@@ -28,3 +28,7 @@ h2 {
   color: #ff9800;
 }
 
+label {
+  font-weight: bolder;
+  color: #673ab7;
+}
