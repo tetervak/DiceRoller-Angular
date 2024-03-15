@@ -9,15 +9,18 @@ import {RollData} from "./roll-data";
 })
 export class AppComponent {
 
+  // the result values
   rollData: RollData;
 
+  // the input value
+  numberOfDice: number = 3;
+
   constructor(private rollerService: RollerService) {
-    this.rollData = rollerService.getRollData(3);
+    this.rollData = rollerService.getRollData(this.numberOfDice);
   }
 
-  onRollDice(numberOfDice: number) {
-    this.rollData = this.rollerService.getRollData(numberOfDice);
+  onRollDice(): void {
+    this.rollData = this.rollerService.getRollData(this.numberOfDice);
   }
 
-  protected readonly parseInt = parseInt;
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DiceDisplayComponent } from './dice-display/dice-display.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DiceDisplayComponent } from './dice-display/dice-display.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

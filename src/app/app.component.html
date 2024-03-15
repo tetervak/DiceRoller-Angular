@@ -8,16 +8,16 @@
   </p>
   <p>
     <label for="c">Number of Dice:</label>&nbsp;
-    <select id="c" #numberOfDice>
+    <select id="c" [(ngModel)]="numberOfDice">
       <option>1</option>
       <option>2</option>
-      <option selected>3</option>
+      <option>3</option>
       <option>4</option>
       <option>5</option>
     </select>
   </p>
   <p>
-    <button (click)="onRollDice(parseInt(numberOfDice.value))">Roll Dice</button>
+    <button (click)="onRollDice()">Roll Dice</button>
   </p>
 </main>
 <app-footer name="Applied Computing"></app-footer>
