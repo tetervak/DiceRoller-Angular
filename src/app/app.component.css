@@ -22,6 +22,12 @@ h2 {
   font-weight: bolder;
 }
 
+.message{
+  color: #e91e63;
+  font-style: oblique;
+  font-size: larger;
+}
+
 .total_number {
   font-size: larger;
   font-weight: bolder;
