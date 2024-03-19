@@ -12,7 +12,7 @@ export class DataStorageService {
   }
 
   loadRollData(): RollData{
-    let values = JSON.parse(localStorage[DataStorageService.key]);
+    let values: number[] = JSON.parse(localStorage[DataStorageService.key]);
     return {
       values: values,
       total: values.reduce((a: number, b: number) => a + b, 0),

@@ -12,7 +12,7 @@ export class RollerService {
     const values: number[] = [];
     let total: number = 0;
     for (let i: number = 0; i < numberOfDice; i++) {
-      let diceValue = this.getRandomDiceValue()
+      let diceValue: number = this.getRandomDiceValue()
       values.push(diceValue);
       total += diceValue;
     }
