@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RollerService } from './roller.service';
+import { RollingDataService } from './rolling-data.service';
 
-describe('RollerService', () => {
-  let service: RollerService;
+describe('RollingDataService', () => {
+  let service: RollingDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RollerService);
+    service = TestBed.inject(RollingDataService);
   });
 
   it('should be created', () => {
