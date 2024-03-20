@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {RollData} from "./roll-data";
 import {DataStorageService} from "./data-storage.service";
 import {RollingDataService} from "./rolling-data.service";
-import {Subscription} from "rxjs";
+import {delay, Subscription} from "rxjs";
 import {LoadingState} from "./loading-state";
 
 @Component({
@@ -35,6 +35,7 @@ export class AppComponent {
     this.loadingState = LoadingState.LOADING;
     this.rollDataSub = this.rollingDataService
       .getRollData(this.numberOfDice)
+      .pipe(delay(1000)) // fake delay, 1 second
       .subscribe({
         next: rollData => {
           this.rollData = rollData;
