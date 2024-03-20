@@ -14,7 +14,7 @@ export class AppComponent {
   // the result values
   rollData: RollData | undefined;
 
-  rollDataSub: Subscription | undefined;
+  private rollDataSub: Subscription | undefined;
 
   // the input value
   numberOfDice: number = 3;
