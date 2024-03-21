@@ -1,9 +1,5 @@
 <app-header></app-header>
 <main>
-  <ng-container [ngSwitch]="loadingState">
-    <p class="message" *ngSwitchCase="LoadingState.LOADING">Loading the Roll Data (Fake Delay).</p>
-    <p class="message" *ngSwitchCase="LoadingState.ERROR">Could not Load the Roll Data.</p>
-  </ng-container>
   <h2>Roll the Dice</h2>
   <ng-container *ngIf="rollData !== undefined" >
     <app-dice-display [diceValues]="rollData.values"></app-dice-display>
@@ -16,16 +12,20 @@
     <mat-form-field appearance="outline">
       <mat-label>Number of Dice</mat-label>
       <mat-select [(ngModel)]="numberOfDice">
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4</mat-option>
-        <mat-option value="5">5</mat-option>
+        <mat-option [value]="1">1</mat-option>
+        <mat-option [value]="2">2</mat-option>
+        <mat-option [value]="3">3</mat-option>
+        <mat-option [value]="4">4</mat-option>
+        <mat-option [value]="5">5</mat-option>
       </mat-select>
     </mat-form-field>
   </p>
   <p>
     <button mat-raised-button color="primary" (click)="onRollDice()">Roll Dice</button>
   </p>
+  <ng-container [ngSwitch]="loadingState">
+    <p class="message" *ngSwitchCase="LoadingState.LOADING">Loading the Roll Data (Fake Delay).</p>
+    <p class="message" *ngSwitchCase="LoadingState.ERROR">Could not Load the Roll Data.</p>
+  </ng-container>
 </main>
 <app-footer name="Applied Computing"></app-footer>
