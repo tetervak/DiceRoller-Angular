@@ -40,3 +40,14 @@ label {
   font-weight: bolder;
   color: #673ab7;
 }
+
+mat-spinner {
+  max-width: 2em;
+  max-height: 2em;
+  margin-right: 1em;
+}
+
+div.loading-message {
+  display: flex;
+  align-items: center;
+}

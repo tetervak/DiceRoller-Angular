@@ -1,12 +1,23 @@
 <app-header></app-header>
 <main>
   <h2>Roll the Dice</h2>
-  <ng-container *ngIf="rollData !== undefined" >
-    <app-dice-display [diceValues]="rollData.values"></app-dice-display>
-    <p>
-      <span class="total_label">Total:</span>&nbsp;
-      <span class="total_number">{{rollData.total}}</span>
+  <ng-container [ngSwitch]="loadingState">
+    <div *ngSwitchCase="LoadingState.LOADING" class="loading-message">
+      <mat-spinner></mat-spinner>
+      <span class="message">Loading the Roll Data (Fake Delay).</span>
+    </div>
+    <p class="message" *ngSwitchCase="LoadingState.ERROR">
+      Could not Load the Roll Data.
     </p>
+    <ng-container *ngSwitchDefault>
+      <ng-container *ngIf="rollData !== undefined" >
+        <app-dice-display [diceValues]="rollData.values"></app-dice-display>
+        <p>
+          <span class="total_label">Total:</span>&nbsp;
+          <span class="total_number">{{rollData.total}}</span>
+        </p>
+      </ng-container>
+    </ng-container>
   </ng-container>
   <p style="margin-top: 3em">
     <mat-form-field appearance="outline">
@@ -23,9 +34,6 @@
   <p>
     <button mat-raised-button color="primary" (click)="onRollDice()">Roll Dice</button>
   </p>
-  <ng-container [ngSwitch]="loadingState">
-    <p class="message" *ngSwitchCase="LoadingState.LOADING">Loading the Roll Data (Fake Delay).</p>
-    <p class="message" *ngSwitchCase="LoadingState.ERROR">Could not Load the Roll Data.</p>
-  </ng-container>
+
 </main>
 <app-footer name="Applied Computing"></app-footer>
